@@ -9,9 +9,7 @@ $grazie = "http://mauu1988.altervista.org/index.php";
 //Pagina di redirect
 
 $host = "localhost";
-
 $user_db = "root";
-
-$password_db = "mau*1*2*3";
+$password_db= "segreta";  
  
-?>
+?>
