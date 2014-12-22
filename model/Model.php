@@ -9,25 +9,23 @@ include_once("model/BrowserDetect.php");
 include_once("model/Title.php");
 include_once("model/ActionModel.php");
 include_once("model/Job.php");
+
 class Model {
 
   public $term;
-  public $conn;
- 
+  public $conn; 
+  
  public function getContacts()
  {
-    $host = "localhost";
-    $user = "root";
+    require("config.php");  
+    $email="mauriziogargiulo6@gmail.com";    
     
-    $password= "mau*1*2*3";
-    $email="mauriziogargiulo6@gmail.com";
+    $this->conn = mysql_connect($host_db,$user_db,$password_db) or die(mysql_error());
+    mysql_select_db("my_mauu1988", $this->conn) or die("Errore nella selezione del database");
     
-    $link = mysql_connect($host,$user,$password) or die(mysql_error());
-    mysql_select_db("my_mauu1988", $link) or die("Errore nella selezione del database");
-     
     $query = "SELECT * FROM contacts WHERE email='$email'";
    
-    $result=mysql_query($query,$link) or die(mysql_error());
+    $result=mysql_query($query,$this->conn) or die(mysql_error());
          
     if($result==FALSE){
        echo "Query error";

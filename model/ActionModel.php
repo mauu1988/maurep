@@ -1,13 +1,12 @@
 <?
-include 'config.php';
+
 include_once("Model.php");
- 
+
 class ActionModel extends Model
 {
     public $term;
-    public $conn;
     public $dati;
- 
+    
         public function __construct()
         {
             $this->dbConnect();
@@ -15,15 +14,14 @@ class ActionModel extends Model
             $this->dati = $this->printResult();               
         }
  
-        private function dbConnect()
+        public function dbConnect()
         {
-            $host = "localhost";
-            $user = "root";
-    
-            $password= "mau*1*2*3";          
-                       
-            $this->conn = mysql_connect($host,$user,$password) OR die("Connessione non riuscitaa");
+            chdir("../");
+            require("config.php");      
+                    
+            $this->conn = mysql_connect($host,$user_db,$password_db) OR die("Connessione non riuscitaa");
             mysql_select_db("my_mauu1988", $this->conn) OR die("Impossibile selezionare il database");
+            
         }
  
         public function printResult()

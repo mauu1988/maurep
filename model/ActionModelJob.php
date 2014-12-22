@@ -76,12 +76,10 @@ class ActionModelJob extends Model
  
         private function dbConnect()
         {
-            $host = "localhost";
-            $user = "root";
-    
-            $password= "mau*1*2*3";          
-            
-            $this->conn = mysql_connect($host,$user,$password) OR die("Connessione non riuscita");
+            chdir("../");
+            require("config.php");      
+                    
+            $this->conn = mysql_connect($host,$user_db,$password_db) OR die("Connessione non riuscita");             
             mysql_select_db("my_mauu1988", $this->conn) OR die("Impossibile selezionare il database");
         }
         

@@ -9,7 +9,7 @@ class Controller {
     public function __construct()  
     {  
        $this->model = new Model(); 
-       $this->actionmodel= new ActionModel();
+       //$this->actionmodel= new ActionModel();
     }  
  
     public function menu()
