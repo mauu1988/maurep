@@ -124,6 +124,12 @@ class Model {
        $title->title_job = "title_job";
     }
     
+    if($url == "/jobadmin.php") {    
+   
+       $title = new Title();
+       $title->title_jobadmin = "title_jobadmin";
+    }
+    
     return $title;
  }  
 }

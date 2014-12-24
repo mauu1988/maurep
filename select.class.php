@@ -1,8 +1,7 @@
 <?
 
 class SelectList
-{
-	
+{	
 	protected $conn;
 	
 		public function __construct()
@@ -296,8 +295,7 @@ class SelectList
            {
                return 0;
            }
-        }
-        
+        }      
 }
 
 ?>

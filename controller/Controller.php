@@ -82,6 +82,10 @@ class Controller {
         if(isset($title->title_job)){
            include 'view/titlejob.php';
         }
+        if(isset($title->title_jobadmin)){
+           include 'view/titlejobadmin.php';
+        }
+        
      }
      public function job()
      {
